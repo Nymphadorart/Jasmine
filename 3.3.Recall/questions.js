@@ -1,109 +1,134 @@
 let selectElementsStartingWithA = (array) => {
-    return 'Write your method here';
+    return array.filter(str => /^[a]/i.test(str));
+    //return array.filter((str) =>.startWith("a"))
 }
 
 let selectElementsStartingWithVowel = (array) => {
-    return 'Write your method here';
+    return array.filter(str => /^[aeiou]/i.test(str));
+    //return array.filter((str) =>.startWith("a,e,i,o,u"))
 }
 
 let removeNullElements = (array) => {
-    return 'Write your method here';
+
+    return array.filter(x => x !== null);
 }
 
 let removeNullAndFalseElements = (array) => {
-    return 'Write your method here';
+    return array.filter(x => x !==false && x !==null );
 }
 
 let reverseWordsInArray = (array) => {
-    return 'Write your method here';
+    return array.toString().split("").reverse().join("").split(",").reverse()
+
 }
 
 let everyPossiblePair = (array) => {
-    return 'Write your method here';
+    return array.sort().map( (v, i) => array.slice(i + 1).map(w => [v, w]) ).flat();
+
 }
 
 let allElementsExceptFirstThree = (array) => {
-    return 'Write your method here';
+    return array.splice(3,8);
 }
 
 let addElementToBeginning = (array, element) => {
-    return 'Write your method here';
+    return [element, ...array];
+    //return array.unshift(element)
 }
 
 let sortByLastLetter = (array) => {
-    return 'Write your method here';
+    return array.sort((a, b) => a.charCodeAt(a.length - 1) - b.charCodeAt(b.length - 1));
 }
 
 let getFirstHalf = (string) => {
-    return 'Write your method here';
+    return string.substr(0,3);
 }
 
 let makeNegative = (number) => {
-    return 'Write your method here';
+    return -Math.abs(number);
 }
 
 let numberOfPalindromes = (array) => {
-    return 'Write your method here';
+   let count = 0 ;
+   for (let elem of array) {
+       if (elem === elem.split("").reverse().join("")) count++;
+   } return count;
+    
+   //return array.toString().split("").reverse().join("").split(",")
 }
 
 let shortestWord = (array) => {
-    return 'Write your method here';
+    return array.sort((a, b) => a.length - b.length)[0];
 }
 
 let longestWord = (array) => {
-    return 'Write your method here';
+    return array.sort((a, b) => b.length - a.length)[0];
+    //return array.reduce((a, b) => a.length < b.length ? b : a, "");
 }
 
 let sumNumbers = (array) => {
-    return 'Write your method here';
+    return array.reduce ((a,b) => a + b, 0);
 }
 
 let repeatElements = (array) => {
-    return 'Write your method here';
+    return array.concat(array)
 }
 
 let stringToNumber = (string) => {
-    return 'Write your method here';
+    return parseInt(string);
 }
 
 let calculateAverage = (array) => {
-    return 'Write your method here';
+    return array.reduce ((a, b) => a + b )/array.length ;
 }
 
 let getElementsUntilGreaterThanFive = (array) => {
-    return 'Write your method here';
+    return array.filter(el => { return el <= 5 }).splice(0, 6)
 }
 
 let convertArrayToObject = (array) => {
-    return 'Write your method here';
+    let Obj = {};
+    for (let i = 0; i < array.length - 1; i += 2) {
+      Obj[array[i]] = array[i + 1];
+    }
+    return Obj;
+     //return Object.assign({}, array);
 }
 
 let getAllLetters = (array) => {
-    return 'Write your method here';
+return array.split(",")
 }
 
 let swapKeysAndValues = (object) => {
-    return 'Write your method here';
+    const swapped = Object.entries(object).map(
+        ([key, value]) => [value, key]
+      );
+    
+      return Object.fromEntries(swapped);;
 }
 
 let sumKeysAndValues = (object) => {
-    return 'Write your method here';
+    /*return Object.reduce(
+        (a, b) => a + b, 0);;*/
+
+        return Object.reduce((a, b) => a + (b[key] || 0), 0);
+    
 }
 
 let removeCapitals = (string) => {
-    return 'Write your method here';
+    return string.replace(/[A-Z]/g,'');
 }
 
 let roundUp = (number) => {
-    return 'Write your method here';
+    return Math.ceil(number);
 }
 
 let formatDateNicely = (date) => {
-    return 'Write your method here';
+    return date.toLocaleDateString();
 }
 
 let getDomainName = (string) => {
-    return 'Write your method here';
+    //return string.substring(0, string.lastIndexOf("@")+1);
 }
 
 let titleize = (string) => {
@@ -111,15 +136,19 @@ let titleize = (string) => {
 }
 
 let checkForSpecialCharacters = (string) => {
-    return 'Write your method here';
+    if( string.match() ){
+        return true;
+      }else{
+        return false;
+      }
 }
 
 let squareRoot = (number) => {
-    return 'Write your method here';
+    return Math.sqrt(number);
 }
 
 let factorial = (number) => {
-    return 'Write your method here';
+    return  (number);
 }
 
 let findAnagrams = (string) => {
